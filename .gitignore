@@ -1,0 +1,28 @@
+# Local Data & Models
+data/
+outputs/
+*.gguf
+*.safetensors
+*.bin
+
+# Environments
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets & Credentials
+.env
+*.json
+!docker-compose.yml
+!requirements.txt
+!*/requirements.txt
+
+# Logs
+logs/
+*.log
+
+# OS & IDE
+.DS_Store
+.vscode/
+.idea/
