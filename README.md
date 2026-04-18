@@ -1,4 +1,4 @@
-# Open Email LoRA: Professional Blueprint
+# Open Email LoRA: Telling openclaw which emails you will actually respond to
 
 This project provides a comprehensive, modular framework for building personal email classification models using LoRA (Low-Rank Adaptation). It is designed to take you from raw inbox ingestion to a production-ready inference API using **Gemma 4** and **Unsloth**.
 
