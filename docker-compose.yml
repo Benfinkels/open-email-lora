@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # The extraction & sanitization engine
+  collector:
+    build: ./collection
+    volumes:
+      - ./data:/app/data
+    environment:
+      - GMAIL_TOKEN=/app/secrets/token.json
+
+  # The synthetic data generator (optional)
+  synthetic:
+    build: ./synthetic
+    volumes:
+      - ./data:/app/data
+    environment:
+      - OLLAMA_HOST=http://host.docker.internal:11434
+
+  # The fine-tuning worker (requires NVIDIA Container Toolkit)
+  tuner:
+    build: ./tuning
+    runtime: nvidia
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # The final classification API
+  oracle:
+    build: ./runtime
+    ports:
+      - "8050:8050"
+    environment:
+      - OLLAMA_HOST=http://host.docker.internal:11434

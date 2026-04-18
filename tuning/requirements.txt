@@ -1,0 +1,6 @@
+# Training Dependencies (Optimized via Unsloth)
+torch>=2.1.0
+transformers>=4.38.0
+pyyaml>=6.0.1
+datasets>=2.16.0
+unsloth @ git+https://github.com/unslothai/unsloth.git

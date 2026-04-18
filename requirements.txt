@@ -1,0 +1,5 @@
+# Master requirements for open-email-lora
+-r collection/requirements.txt
+-r tuning/requirements.txt
+-r runtime/requirements.txt
+-r synthetic/requirements.txt

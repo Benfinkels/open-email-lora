@@ -1,0 +1,8 @@
+FROM /home/alfred/.ollama/models/alfred-v1.gguf
+TEMPLATE """<start_of_turn>user
+{{ .Prompt }}<end_of_turn>
+<start_of_turn>model
+"""
+PARAMETER stop "<end_of_turn>"
+PARAMETER temperature 0.3
+PARAMETER top_p 0.9
