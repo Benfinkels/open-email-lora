@@ -1,0 +1,7 @@
+batch_size: 2
+bf16: true
+dataset_path: data/dataset.jsonl
+epochs: 3
+learning_rate: 0.0002
+model: unsloth/gemma-4-E4B-it-unsloth-bnb-4bit
+output_dir: outputs/lora_adapter
